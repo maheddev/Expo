@@ -21,4 +21,26 @@ Now open the Folder in any Code Editor (VS Code recommended). Open App.js file, 
 
 All Done..
 
+Git Guide:
+
+Download Git for Windows
+
+First Time:
+
+git init (in project directory)
+git commit -m "== Message ==" | (Example: git commit -m "Added LoginPage.js File")
+git branch -M main
+git remote add origin <link of the repository> | (Example: git remote add origin github.com/maheddev/Expo.git)  
+git push -u origin main
+
+For Updation:
+
+git status
+git add .  (If Files are Red in git status)
+git status
+git commit -m "I have Added Code" (Use only when all files are green in git status)
+git status
+git push
+git push -u origin master (only in case of an error)
+
 Contributed by: Mahed Shahzad Nasir
