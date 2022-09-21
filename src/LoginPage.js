@@ -35,7 +35,7 @@ export default function LoginPage() {
               fontWeight: "bold",
             }}
           >
-            CUONLINE COMSATS LAHORE
+            CUONLINE CUI LAHORE
           </Text>
         </View>
 
