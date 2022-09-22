@@ -5,14 +5,17 @@ import {
   TextInput,
   Image,
   ToastAndroid,
-  Linking,
   ScrollView,
 } from "react-native";
 import React from "react";
-export default function LoginPage() {
+import SocialMediaMenus from "./SocialMediaMenus";
+export default function LoginPage({ navigation }) {
+  const onPressH = () => {
+    navigation.navigate("SignUpPage");
+  };
   return (
     <ScrollView>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: "white" }}>
         {/* ============================ Header ============================ */}
         <View
           style={{
@@ -30,12 +33,14 @@ export default function LoginPage() {
           />
           <Text
             style={{
-              fontSize: 23,
+              fontSize: 20,
               color: "white",
               fontWeight: "bold",
+              textAlign: "center",
+              padding: 10,
             }}
           >
-            CUONLINE CUI LAHORE
+            CUONLINE COMSATS UNIVERSITY LAHORE CAMPUS
           </Text>
         </View>
 
@@ -47,10 +52,23 @@ export default function LoginPage() {
             marginTop: 30,
             marginLeft: "10%",
             marginRight: "10%",
+            marginBottom: 30,
             justifyContent: "center",
           }}
         >
-          <Text style={{ fontSize: 20 }}>Roll No.</Text>
+        <Text
+            style={{
+              textAlign: "center",
+              fontSize: 30,
+              color: "#115EA6",
+              marginTop: 0,
+              marginBottom: 20,
+              fontWeight: "bold",
+            }}
+          >
+            Log in to your Account!
+          </Text>
+          <Text style={{ fontSize: 15, color: "#4B2980" }}>Roll No.</Text>
           <TextInput
             placeholder="FA20-BCS-032"
             style={{
@@ -61,7 +79,9 @@ export default function LoginPage() {
               borderBottomWidth: 1,
             }}
           />
-          <Text style={{ fontSize: 20, marginTop: 10 }}>Password</Text>
+          <Text style={{ fontSize: 15, marginTop: 10, color: "#4B2980" }}>
+            Password
+          </Text>
           <TextInput
             placeholder="Please enter Your Password"
             style={{
@@ -102,7 +122,7 @@ export default function LoginPage() {
               width: 250,
               height: 40,
               border: 2,
-              margin: 20,
+              margin: 10,
               color: "#ffffff",
               borderRadius: 50,
               justifyContent: "center",
@@ -114,10 +134,11 @@ export default function LoginPage() {
               LOG IN!
             </Text>
           </Pressable>
+          <Text style={{ color: "#4B2980" }}>
+            Don't have an Account? Register Now!
+          </Text>
           <Pressable
-            onPress={() =>
-              ToastAndroid.show("Sign Up Button Pressed", ToastAndroid.BOTTOM)
-            }
+            onPress={onPressH}
             android_ripple={{ color: "#ffffff", borderRadius: 50 }}
             hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
             style={{
@@ -125,6 +146,7 @@ export default function LoginPage() {
               height: 40,
               border: 2,
               color: "#ffffff",
+              margin: 10,
               borderRadius: 50,
               justifyContent: "center",
               alignItems: "center",
@@ -138,64 +160,8 @@ export default function LoginPage() {
         </View>
 
         {/*======================= Social Menus ======================= */}
-
-        <View
-          style={{
-            flex: 0.2,
-            paddingTop: 40,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Pressable
-            onPress={() => Linking.openURL("https://facebook.com/mahedShahzad")}
-            android_ripple={{ color: "#000000", borderRadius: 50 }}
-            hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
-          >
-            <Image
-              style={{ width: 40, height: 40, margin: 10 }}
-              source={require("../assets/1.png")}
-            />
-          </Pressable>
-          <Pressable
-            onPress={() =>
-              Linking.openURL("https://linkedIn.com/in/mahedShahzad")
-            }
-            android_ripple={{ color: "#000000", borderRadius: 50 }}
-            hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
-          >
-            <Image
-              style={{ width: 40, height: 40, margin: 10 }}
-              source={require("../assets/2.png")}
-            />
-          </Pressable>
-          <Pressable
-            onPress={() =>
-              Linking.openURL("https://instagram.com/mahedShahzad")
-            }
-            android_ripple={{ color: "#000000", borderRadius: 50 }}
-            hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
-          >
-            <Image
-              style={{ width: 40, height: 40, margin: 10 }}
-              source={require("../assets/3.png")}
-            />
-          </Pressable>
-          <Pressable
-            onPress={() =>
-              Linking.openURL(
-                "https://www.youtube.com/channel/UCCc0gSHCFB3EylkiecLMFug"
-              )
-            }
-            android_ripple={{ color: "#000000", borderRadius: 100 }}
-            hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
-          >
-            <Image
-              style={{ width: 40, height: 40, margin: 10 }}
-              source={require("../assets/4.png")}
-            />
-          </Pressable>
+        <View style={{ paddingTop: 40 }}>
+          <SocialMediaMenus />
         </View>
       </View>
     </ScrollView>
