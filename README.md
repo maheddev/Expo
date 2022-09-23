@@ -43,4 +43,7 @@ git status
 git push
 git push -u origin master (only in case of an error)
 
+How to Create APK FILE of EXPO Project
+# https://youtu.be/7OOE4rQf7zI
+
 Contributed by: Mahed Shahzad Nasir
